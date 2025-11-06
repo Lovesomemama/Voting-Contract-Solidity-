@@ -5,6 +5,7 @@ contract Voting {
     mapping(address => uint) public votes;
 // Add specified amount of votes to the sender's address
     function vote(uint amount) public {
+        require(amount > 0, "Amount must be positive");
         votes[msg.sender] += amount;
     }
 // Retrieve vote count for a given address
