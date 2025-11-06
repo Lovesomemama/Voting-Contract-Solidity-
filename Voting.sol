@@ -2,14 +2,14 @@
 pragma solidity ^0.8.0;
 
 contract Voting {
-    mapping(address => uint) public votes;
+    mapping(address => uint) private votes;
 // Add specified amount of votes to the sender's address
     function vote(uint amount) public {
         require(amount > 0, "Amount must be positive");
         votes[msg.sender] += amount;
     }
 // Retrieve vote count for a given address
-    function getVotes(address addr) public view returns (uint) {
+    function getVotes(address addr) private view returns (uint) {
         return votes[addr];
     }
 }
