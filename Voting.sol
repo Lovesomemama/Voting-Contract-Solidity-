@@ -13,3 +13,4 @@ contract Voting {
         return votes[addr];
     }
 }
+// End of voting contract — ready for extensions
